@@ -1,3 +1,20 @@
+This was a project for an excellent class (at least so far) called "The Joy of React"
+
+https://www.joyofreact.com/
+
+It's not ready to go as a real game...
+
+If I do decide to add more..
+
+I need a longer word list for the potential words and all the correct 5 letter words.
+(and only allow real 5 letter words to be submitted)
+
+
+I need to get fancier with the letter checking logic so it will it will correctly show duplicate letters.
+
+It's at least a good start.
+
+
 # Word Game
 
 ## Joy of React, Project I
