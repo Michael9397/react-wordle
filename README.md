@@ -20,7 +20,7 @@ If you're not sure how to run a local development server, or if you run into som
 >
 > This workshop is split into 5 exercises, and each exercise has a solution video. If you spend more than 10 minutes stuck on an exercise, I encourage you to **watch the solution.** If things are still unclear after that, please ask questions in the Discord community!
 
-## Exercise 1: GuessInput
+## Exercise 1: TextInput
 
 First thing’s first: we need a way to submit guesses!
 

@@ -1,5 +1,5 @@
 import React from "react";
-import GuessInput from "../GuessInput";
+import TextInput from "../TextInput";
 import Keyboard from "../Keyboard";
 import { checkGuess } from "../../game-helpers";
 
@@ -32,7 +32,7 @@ function GameInputs({isGameOver, answer, guesses, setGuesses}) {
 
   return (
     <>
-      <GuessInput
+      <TextInput
         guess={guess}
         isGameOver={isGameOver}
         handleInput={handleInput}

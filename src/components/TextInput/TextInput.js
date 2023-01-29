@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ guess, handleBackspace, handleInput, handleSubmit, isGameOver }) {
+function TextInput({ guess, handleBackspace, handleInput, handleSubmit, isGameOver }) {
 
 
   function checkInput(event) {
@@ -25,4 +25,4 @@ function GuessInput({ guess, handleBackspace, handleInput, handleSubmit, isGameO
   );
 }
 
-export default GuessInput;
+export default TextInput;
