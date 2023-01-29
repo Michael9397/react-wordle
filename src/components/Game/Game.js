@@ -1,9 +1,8 @@
 import React from 'react';
-import GuessInput from "../GuessInput";
+import GameInputs from "../GameInputs";
 import GuessList from "../GuessList";
 import EndBanner from "../EndBanner";
 import { NUM_OF_GUESSES_ALLOWED} from "../../constants";
-import Keyboard from "../Keyboard";
 
 
 function Game({ guesses, setGuesses, answer }) {
@@ -21,14 +20,11 @@ function Game({ guesses, setGuesses, answer }) {
       <GuessList
         guesses={guesses}
       />
-      <GuessInput
+      <GameInputs
         isGameOver={isGameOver}
         answer={answer}
         guesses={guesses}
         setGuesses={setGuesses}
-      />
-      <Keyboard
-        guesses={guesses}
       />
       {isGameOver && (
         <EndBanner

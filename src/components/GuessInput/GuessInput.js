@@ -1,27 +1,16 @@
 import React from "react";
-import { checkGuess} from "../../game-helpers";
 
-function GuessInput({ guesses, setGuesses, answer, isGameOver }) {
-  const [guess, setGuess] = React.useState('');
-  function handleInput(event) {
-    let nextValue = event.target.value;
-    nextValue = nextValue.toUpperCase().slice(0, 5);
-    setGuess(nextValue);
-  }
+function GuessInput({ guess, handleBackspace, handleInput, handleSubmit, isGameOver }) {
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (guess.length !== 5) {
-      window.alert('Please enter a 5-letter word.');
+
+  function checkInput(event) {
+    if (event.nativeEvent.inputType === "deleteContentBackward") {
+      handleBackspace();
       return;
     }
-    const letters = checkGuess(guess, answer);
-    const nextGuess = { guess, id: Date.now(), letters };
-    const nextGuesses = [...guesses, nextGuess];
-    setGuesses(nextGuesses);
-    setGuess('');
-  }
+    handleInput(event.target.value);
 
+  }
   return (
     <form className="guess-input-wrapper" onSubmit={event=> handleSubmit(event)}>
       <label htmlFor="guess-input">Enter guess:</label>
@@ -29,7 +18,7 @@ function GuessInput({ guesses, setGuesses, answer, isGameOver }) {
         id="guess-input"
         type="text"
         value={guess}
-        onChange={(event) => handleInput(event)}
+        onChange={event => checkInput(event)}
         disabled={ isGameOver }
       />
     </form>
