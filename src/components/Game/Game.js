@@ -1,15 +1,44 @@
 import React from 'react';
+import GuessInput from "../GuessInput";
+import GuessList from "../GuessList";
+import EndBanner from "../EndBanner";
+import { NUM_OF_GUESSES_ALLOWED} from "../../constants";
+import Keyboard from "../Keyboard";
 
-import { sample } from '../../utils';
-import { WORDS } from '../../data';
 
-// Pick a random word on every pageload.
-const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
+function Game({ guesses, setGuesses, answer }) {
 
-function Game() {
-  return <>Put a game here!</>;
+
+  let hasWon = false;
+  if (guesses.length) {
+    const mostRecentGuess = guesses[guesses.length - 1].guess;
+    hasWon = mostRecentGuess === answer;
+  }
+  const isGameOver = guesses.length === NUM_OF_GUESSES_ALLOWED || hasWon;
+
+  return (
+    <>
+      <GuessList
+        guesses={guesses}
+      />
+      <GuessInput
+        isGameOver={isGameOver}
+        answer={answer}
+        guesses={guesses}
+        setGuesses={setGuesses}
+      />
+      <Keyboard
+        guesses={guesses}
+      />
+      {isGameOver && (
+        <EndBanner
+          hasWon={hasWon}
+          answer={answer}
+          guesses={guesses}
+        />
+      )}
+    </>
+  );
 }
 
 export default Game;

@@ -230,3 +230,35 @@ h1 {
     transform: translateY(0%);
   }
 }
+
+.keyboard-row {
+  display: flex;
+  gap: 5px;
+}
+
+.keyboard-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 3rem;
+  background-color: var(--color-gray-500);
+  border-radius: .4rem;
+  color: white;
+  font-weight:bold;
+  font-size: 1.25rem;
+  margin: .25rem 0;
+}
+
+.keyboard-button + .incorrect {
+  background-color: var(--color-gray-100);
+}
+
+.keyboard-button + .correct {
+  background-color: var(--color-success);
+}
+
+.keyboard-button + .misplaced {
+  background-color: var(--color-warning);
+}
+
